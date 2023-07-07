@@ -6,6 +6,12 @@ void main() {
       appBar: AppBar(
         title: const Text('Lets see some images!'),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          print('Hi there!');
+        },
+      ),
     ),
   );
 
