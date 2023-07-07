@@ -10,6 +10,12 @@ class App extends StatefulWidget {
 class AppState extends State<App> {
   int counter = 0;
 
+  void fetchImage() {
+    setState(() {
+      counter += 1;
+    });
+  }
+
   @override
   Widget build(context) {
     return MaterialApp(
@@ -18,12 +24,8 @@ class AppState extends State<App> {
           title: const Text('Lets see some images!'),
         ),
         floatingActionButton: FloatingActionButton(
+          onPressed: fetchImage,
           child: const Icon(Icons.add),
-          onPressed: () {
-            setState(() {
-              counter += 1;
-            });
-          },
         ),
         body: Text('$counter'),
       ),
