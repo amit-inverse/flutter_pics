@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' show get;
 import 'dart:convert';
 import './models/image_model.dart';
+import './widgets/image_list.dart';
 
 class App extends StatefulWidget {
+  const App({super.key});
+
   @override
   createState() {
     return AppState();
@@ -39,7 +42,7 @@ class AppState extends State<App> {
           onPressed: fetchImage,
           child: const Icon(Icons.add),
         ),
-        body: Text('$counter'),
+        body: ImageList(images),
       ),
     );
   }
